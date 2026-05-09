@@ -32,6 +32,6 @@ app.put('/api/orders/:id/status', order_controller_1.updateOrderStatus);
 // Payment Integrations
 app.post('/api/payments/generate', payment_controller_1.generatePaymentUrl);
 app.post('/api/payments/callback/click', payment_controller_1.clickWebhookHandler);
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
