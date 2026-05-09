@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import crypto from 'crypto';
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ['error'] });
 
 const CLICK_SERVICE_ID = process.env.CLICK_SERVICE_ID || '12345';
 const CLICK_MERCHANT_ID = process.env.CLICK_MERCHANT_ID || '9999';

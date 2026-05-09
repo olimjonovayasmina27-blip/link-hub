@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteProduct = exports.updateStock = exports.addProduct = exports.getAvailableProducts = void 0;
 const client_1 = require("@prisma/client");
-const prisma = new client_1.PrismaClient();
+const prisma = new client_1.PrismaClient({ log: ['error'] });
 const getAvailableProducts = async (req, res) => {
     try {
         const products = await prisma.product.findMany({

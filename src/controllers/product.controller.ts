@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ['error'] });
 
 export const getAvailableProducts = async (req: Request, res: Response) => {
   try {

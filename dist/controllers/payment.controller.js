@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.clickWebhookHandler = exports.generatePaymentUrl = void 0;
 const crypto_1 = __importDefault(require("crypto"));
 const client_1 = require("@prisma/client");
-const prisma = new client_1.PrismaClient();
+const prisma = new client_1.PrismaClient({ log: ['error'] });
 const CLICK_SERVICE_ID = process.env.CLICK_SERVICE_ID || '12345';
 const CLICK_MERCHANT_ID = process.env.CLICK_MERCHANT_ID || '9999';
 const CLICK_SECRET_KEY = process.env.CLICK_SECRET_KEY || 'SECRETKEY';

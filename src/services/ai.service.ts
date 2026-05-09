@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ['error'] });
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export const analyzePhysiqueAndRecommend = async (imageBase64: string, mimeType: string, language: string = 'en') => {
