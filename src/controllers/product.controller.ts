@@ -52,7 +52,7 @@ export const updateStock = async (req: Request, res: Response) => {
     }
 
     const updatedProduct = await prisma.product.update({
-      where: { id },
+      where: { id: id as string },
       data: { stock_quantity: parseInt(stock_quantity) }
     });
     return res.status(200).json({ success: true, data: updatedProduct });
@@ -65,7 +65,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     await prisma.product.delete({
-      where: { id }
+      where: { id: id as string }
     });
     return res.status(200).json({ success: true, message: "Product deleted" });
   } catch (error) {
